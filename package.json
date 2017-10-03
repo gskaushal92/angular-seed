@@ -2,8 +2,8 @@
   "name": "angular-seed",
   "private": true,
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "description": "A starter project for AngularJS edit",
+  "repository": "https://github.com/gskaushal92/angular-seed",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",
