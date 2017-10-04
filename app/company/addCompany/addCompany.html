@@ -9,7 +9,8 @@
 <br/>
 <div class="row col-md-8 col-md-offset-2">
 
-    <form ng-submit="companySubmit()" name="addCompany">
+    <form ng-submit="companySubmit(model)" name="addCompany" ng-init="pageLoad()">
+      <span ng-model="model.Id" ng-hide="true"></span>
       <div class="form-group">
         <label for="DunsNumber">Duns Number</label>
         <input type="text" ng-model="model.duns"
@@ -43,12 +44,15 @@
       </div>
       <div class="form-group">
         <label for="category">Category</label>&nbsp; &nbsp;&nbsp; &nbsp;
+
         <input type="radio" ng-model="model.category"
-        name="category" id="it" >
+        name="category" value="IT" id="it" >
         <label for="IT">IT</label>&nbsp; &nbsp;
+
         <input type="radio" ng-model="model.category"
-        name="category" id="nonIt" >
+        name="category" value="Non IT" id="nonIt" >
         <label for="NonIT">Non IT</label>
+
       </div>
       <div class="form-group">
         <label for="companyName">Address</label>
@@ -68,8 +72,7 @@
         <label for="zip">Zip</label>
         <input type="text" ng-model="model.zip"
         name="zip" title="Zip Code"
-        class="form-control" id="zip"
-         required >
+        class="form-control" id="zip">
       </div>
 
       <button type="submit" class="btn btn-default form-control" ng-disabled="addCompany.$invalid" >Add Company</button>
