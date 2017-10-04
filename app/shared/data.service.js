@@ -4,19 +4,29 @@ angular.module('myApp.dataService', [])
 
 .service('dataService',function(){
   let self = this;
-  let tasks=[
-     {'Id':'1','Title':'Go to Market 99','Status':'done'},
-     {'Id':'2','Title':'Email to manager','Status':'pending'},
-     {'Id':'3','Title':'Push code to GitHub','Status':'done'},
-     {'Id':'4','Title':'Go for running','Status':'done'},
-     {'Id':'5','Title':'Go to movie','Status':'pending'},
-   ]
-  self.getTasks=function(){
-    return tasks
+  self.companies=[
+     {'Id':'1','duns':'1234','companyName':'Ness','country':'India','email':'abc@ness.com','category':'IT'},
+     {'Id':'2','duns':'12345','companyName':'Infosys','country':'India','email':'abc@infosys.com','category':'IT'}
+   ];
+   self.countries=[
+     {'code':'','country':'Select'},
+     {'code':'India','country':'India'},
+     {'code':'US','country':'US'},
+     {'code':'UK','country':'UK'},
+     {'code':'Australia','country':'Australia'}
+   ];
+  self.getCountries=function(){
+    return self.countries;
   }
-  self.addTask=function(task){
-    task.Id=tasks.length + 1;
-    tasks.push(task);
+  self.getCompanies=function(){
+    return self.companies;
   }
-
+  self.addTask=function(company){
+    self.companies.Id=companies.length + 1;
+    self.companies.push(company);
+  }
+  self.deleteTask=function(company){
+    const tempCompanies = self.companies.filter((item) => item.Id !== company.Id);
+    self.companies=tempCompanies;
+  }
 });

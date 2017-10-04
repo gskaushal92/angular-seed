@@ -1,0 +1,79 @@
+<br/>
+<div class="row">
+<div class="col-md-6">
+</div>
+  <div class="col-md-offset-3 col-md-3">
+    <a href="#!/companies" class="btn btn-warning">Show Companies</a>
+  </div>
+</div>
+<br/>
+<div class="row col-md-8 col-md-offset-2">
+
+    <form ng-submit="companySubmit()" name="addCompany">
+      <div class="form-group">
+        <label for="DunsNumber">Duns Number</label>
+        <input type="text" ng-model="model.duns"
+        name="duns" title="Duns Number"
+        class="form-control" id="duns"
+         required >
+      </div>
+      <div class="form-group">
+        <label for="companyName">Company Name</label>
+        <input type="text" ng-model="model.companyName"
+        name="companyName" title="Company Name"
+        class="form-control" id="companyName"
+         required >
+      </div>
+      <div class="form-group">
+        <label for="email">Company Email</label>
+        <input type="text" ng-model="model.email"
+        name="email" title="Company Email"
+        class="form-control" id="email">
+      </div>
+      <div class="form-group">
+        <label for="email">Phone</label>
+        <input type="text" ng-model="model.phone"
+        name="phone" title="Phone Number"
+        class="form-control" id="phone">
+      </div>
+      <div class="form-group">
+        <label for="subsidiary">Subsidiary</label> &nbsp; &nbsp;
+        <input type="checkbox" ng-model="model.subsidiary"
+        name="subsidiary" id="subsidiary" >
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>&nbsp; &nbsp;&nbsp; &nbsp;
+        <input type="radio" ng-model="model.category"
+        name="category" id="it" >
+        <label for="IT">IT</label>&nbsp; &nbsp;
+        <input type="radio" ng-model="model.category"
+        name="category" id="nonIt" >
+        <label for="NonIT">Non IT</label>
+      </div>
+      <div class="form-group">
+        <label for="companyName">Address</label>
+        <textarea type="text" ng-model="model.address"
+        name="address" title="Address"
+        class="form-control" id="address"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="power">Country</label>
+        <select class="form-control" id="country"
+          ng-model="model.country" name="country"
+         required>
+          <option ng-repeat="c in countries" value="{{c.code}}">{{c.country}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="zip">Zip</label>
+        <input type="text" ng-model="model.zip"
+        name="zip" title="Zip Code"
+        class="form-control" id="zip"
+         required >
+      </div>
+
+      <button type="submit" class="btn btn-default form-control" ng-disabled="addCompany.$invalid" >Add Company</button>
+    </form>
+    <br/>
+    <br/>
+</div>
