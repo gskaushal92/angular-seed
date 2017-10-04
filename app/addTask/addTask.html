@@ -1,0 +1,37 @@
+<br/>
+<br/>
+<div class="row">
+<div class="col-md-6">
+<!-- <a routerLink="/home" class="btn btn-default">
+  <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Home
+</a> -->
+</div>
+  <div class="col-md-offset-3 col-md-3">
+    <a href="#!/tasks" class="btn btn-warning">Show Tasks</a>
+  </div>
+</div>
+<br/>
+<br/>
+<div class="row col-md-8 col-md-offset-2">
+
+
+
+    <form ng-submit="taskSubmit()" name="addTask">
+      <div class="form-group">
+        <label for="name">Task</label>
+        <input type="text" ng-model="model.Title"
+        name="title"
+        class="form-control" id="name"
+         required >
+      </div>
+      <div class="form-group">
+  <label for="power">Status</label>
+  <select class="form-control" id="status"
+    ng-model="model.Status" name="status"
+   required>
+    <option ng-repeat="s in status">{{s}}</option>
+  </select>
+</div>
+      <button type="submit" class="btn btn-default form-control" ng-disabled="addTask.$invalid" >Add Task</button>
+    </form>
+</div>

@@ -23,3 +23,16 @@
   content: "|";
   padding-right: 0.3em;
 }
+.container{
+  width: 90%;
+}
+.pendingstatus{
+    color:red;
+}
+.donestatus{
+    color:blue;
+}
+.app-title {
+    line-height:50px;
+    font-size:20px;
+}
